@@ -5,7 +5,6 @@ class CNN(nn.Module):
     def __init__(self, arch, weight_path, num_classes, feature_extract=False):
         super(CNN, self).__init__()
         self.arch = arch
-        self.weight_path = weight_path
         self.num_classes = num_classes
         self.feature_extract = feature_extract
         self.conv0 = nn.Conv2d(1, 3, 1)
@@ -13,18 +12,12 @@ class CNN(nn.Module):
     
     def get_encoder(self):
         if "VGG16" in self.arch:
-            if 'imagenet' == self.weight_path:
-                encoder = torch.hub.load('pytorch/vision:v0.10.0', 'vgg16', pretrained=True)
-            else:
-                encoder = torch.hub.load('pytorch/vision:v0.10.0', 'vgg16', pretrained=False)
+            encoder = torch.hub.load('pytorch/vision:v0.10.0', 'vgg16', pretrained=True)
             self.set_parameter_requires_grad(encoder)
             num_ftrs = encoder.classifier[6].in_features
             encoder.classifier[6] = nn.Linear(num_ftrs, self.num_classes)
         elif "DenseNet121" in self.arch:
-            if 'imagenet' == self.weight_path:
-                encoder = torch.hub.load('pytorch/vision:v0.10.0', 'densenet121', pretrained=True)
-            else:
-                encoder = torch.hub.load('pytorch/vision:v0.10.0', 'densenet121', pretrained=False)    
+            encoder = torch.hub.load('pytorch/vision:v0.10.0', 'densenet121', pretrained=True)
             self.set_parameter_requires_grad(encoder)
             num_ftrs = encoder.classifier.in_features
             encoder.classifier = nn.Linear(num_ftrs, self.num_classes)
