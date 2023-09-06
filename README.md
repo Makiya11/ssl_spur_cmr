@@ -1,7 +1,7 @@
 # Reducing Contextual Bias in CMR - MLHC 2023
 
 
-### Reducing Contextual Bias in Cardiac Magnetic Resonance Imaging Deep Learning Using Contrastive Self-Supervision [[Paper]]() 
+### Reducing Contextual Bias in Cardiac Magnetic Resonance Imaging Deep Learning Using Contrastive Self-Supervision [[Paper]](https://static1.squarespace.com/static/59d5ac1780bd5ef9c396eda6/t/64d19e04e318e05f94595336/1691459076974/ID64_Research+Paper_2023.pdf) 
 
 <p align="center">
   <img src="figures/example_img.jpg" width="700">
@@ -14,7 +14,7 @@ Example CMR images separating object of interest from background
 ## Citation
  we kindly ask that you reference our paper if you find our code is beneficial to your research
 ```
-@inproceedings{makiya_contextualbias_2023,
+@inproceedings{nakashima_contextualbias_2023,
   title     = {Reducing Contextual Bias in Cardiac Magnetic Resonance Imaging Deep Learning Using Contrastive Self-Supervision},
   author    = {Makiya Nakashima,
                Donna Salem,
@@ -26,7 +26,7 @@ Example CMR images separating object of interest from background
                Deborah Kwon and
                David Chen },
   booktitle={Machine Learning for Healthcare 2023},
-  url       = {},
+  url       = {https://static1.squarespace.com/static/59d5ac1780bd5ef9c396eda6/t/64d19e04e318e05f94595336/1691459076974/ID64_Research+Paper_2023.pdf},
   year      = {2023},
 }
 ```
